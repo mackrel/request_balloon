@@ -1,33 +1,100 @@
-$iconWidth: 100px;
+$iconWidth: 90px;
 $iconHeight: $iconWidth;
+
+$balloonFontSz: 30px;
+$myBalloon: #81de45;
+$someoneBalloon: #fff;
+$backColor: #7393c2;
+$talesize: 64px;
 
 .talk_m
 {
   width: 100%;
   height: 100vh;
-  background-color: #aaa;
+  box-sizing: border-box;
+  padding-top: 50px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: $backColor;
 }
 
 .item_m
 {
   position: relative;
+  margin-bottom: 30px;
 }
 
 .iconWrap_m
 {
-  width:100px;
+  width:$iconWidth;
+  height: $iconHeight;
   position: absolute;
-  left: 0;
+  left: $iconWidth*0.1;
   top: 0;
+}
+
+.icon_m
+{
+  width: 100%;
+  height: 100%;
+  border-radius: 20%;
 }
 
 .balloonWrap_m
 {
-  width: calc(100% - #{$iconWidth*2*1.2});
-  margin-left: $iconWidth*1.2;
+  width: calc(100% - #{$iconWidth*2*1.2} - #{$talesize});
+  margin: 0 auto;
 }
 
 .balloon_m
 {
-  background-color: #ee9999;
+  $pad: 30px;
+
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  padding: $pad;
+  border-radius: $pad;
+  background-color: $someoneBalloon;
+}
+
+.tale
+{
+  color: $someoneBalloon;
+  position: absolute;
+  top: $talesize*0.2;
+  left: -1*$talesize*0.5;
+}
+
+.text_m
+{
+  font-size: $balloonFontSz;
+  color: #444;
+}
+
+.nfst_m
+{
+  margin-top: $balloonFontSz/2;
+}
+
+.me_m
+{
+  .iconWrap_m
+  {
+    right: $iconWidth*0.1;
+    top: 0;
+    left: auto;
+  }
+
+  .balloon_m
+  {
+    background-color: $myBalloon;
+  }
+
+  .tale
+  {
+    color: $myBalloon;
+    right: -1*$talesize*0.5;
+    left: auto;
+  }
 }
